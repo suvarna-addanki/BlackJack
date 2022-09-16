@@ -6,24 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlackJack</title>
     <link rel="stylesheet" href = "blackjack.css">
-    <script src="module.js"></script>
+    <script src="blackjack.js"></script>
     <header>
     <div class = "game">
 
         <button id = "reset">RESET GAME</button>
         <h1>Let's Play<br>BlackJack</h1>
-        <button id = "rules">RULES</button>
-
-        
+        <button class ="rules" data-open="modal">RULES</button>
+            <dialog id="modal" class ="modal1">
+                <h2>Basic Rules Of Blackjack</h2>
+                <p><strong>Goal</strong> Beat the dealer by getting a hand as close to 21 as possible, without going over 21. A blackjack occurs when you get one ace and one 10 point card.</p>
+			    <p><strong>Gameplay</strong> The dealer will give 2 cards to themself and 2 cards to you. The dealer's second card will be played face down. You can choose to either hit (receive more cards) or stay (move on to the next hand). You can hit as many times as you choose so long as your deck is under 21.</p>
+			    <p><strong>Card Values</strong> Queens, Kings, and Jacks are worth 10, pip cards are worth their face value, but Aces can be worth either 11 or 1. In this game, Aces have a default value is 11 unless you go over 21 on your hand.</p>
+                <button class="close-modal" data-close>CLOSE</button>
+            </dialog>
     
-    <dialog id="modal" class ="modal">
-            <h2>Basic Rules Of Blackjack</h2>
-            <p><strong>Goal</strong> Beat the dealer by getting a hand as close to 21 as possible, without going over 21. A blackjack occurs when you get one ace and one 10 point card.</p>
-			<p><strong>Gameplay</strong> The dealer will give 2 cards to themself and 2 cards to you. The dealer's second card will be played face down. You can choose to either hit (receive more cards) or stay (move on to the next hand). You can hit as many times as you choose so long as your deck is under 21.</p>
-			<p><strong>Card Values</strong> Queens, Kings, and Jacks are worth 10, pip cards are worth their face value, but Aces can be worth either 11 or 1. In this game, Aces have a default value is 11 unless you go over 21 on your hand.</p>
-            <button class="close-modal">CLOSE</button>
-    </dialog>
-    </div>
 
     
     </header>

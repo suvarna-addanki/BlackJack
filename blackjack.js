@@ -134,11 +134,11 @@ function startGame() {   //when we start the game first we want to deal the card
         //     reduceAceCount(yourAceCount)
         //     document.getElementById("your-Total").innerText = yourTotal 
         // }
-        //eventlisteners for hit and stay buttons
+        //eventlisteners for hit and stay and reset buttons
     document.getElementById("hit").addEventListener("click", hit);
     document.getElementById("stay").addEventListener("click", stay);
     document.getElementById("reset").addEventListener("click", reset);
-    //document.getElementById("rules").addEventListener("click", rules);
+    document.querySelector(".rules").addEventListener("click", rules);
     }
 
     function reset() {
@@ -146,16 +146,24 @@ function startGame() {   //when we start the game first we want to deal the card
     }
 
     
-        const rules= document.querySelector("#rules");
-        const close = document.querySelector(".close-modal")
-        const modal = document.querySelector("#modal")
+        
+        // rules.addEventListener("click", () => {
+        //     modal.showModal()
+        // })
+        
+        // const openrules = document.querySelectorAll("[data-open]")
+        // const isVisible = "is-visible";
 
-        rules.addEventListener("click", () =>{
-            modal.showModal()
-        })
-        close.addEventListener("click", () =>{
-            modal.closeModal()
-        })
+        // for(const index of openrules) {
+        //     index.addEventListener("click", function(){
+        //         const modalID = this.dataset.open;
+        //         document.getElementById(modalID).classList.add(isVisible)
+        //     })
+        // }
+        
+        // close.addEventListener("click", () => {
+        //     modal.closeModal()
+        // })
     
 
     function hit() {              //if you (the player) does not hit the hit button we dont do anything

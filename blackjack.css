@@ -73,7 +73,7 @@ h1{
     cursor: pointer;
 }
 
-#rules{
+.rules{
     width: 100px;
     height: 50px;
     background-color:pink;
