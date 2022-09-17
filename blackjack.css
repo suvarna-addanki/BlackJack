@@ -3,6 +3,7 @@ body{
     text-align:center;
     font-family: Arial, Helvetica, sans-serif;
     background-color: green;
+    
 }
 
 h1{
@@ -27,13 +28,29 @@ h1{
     font-size: 20px;
     background-color: greenyellow;
     cursor: pointer;
+    border-radius: 25px;
+    color:brown;
+    
+    
 }
+#hit:hover{
+    background-color: yellowgreen;
+}
+
 #stay{
     width: 100px;
     height: 50px;
     font-size: 20px;
     background-color: red;
     cursor: pointer;
+    border-radius: 25px;
+    color: aquamarine;
+   
+}
+
+#stay:hover{
+    background-color: darkred;
+    
 }
 
 #results{
@@ -55,7 +72,7 @@ h1{
     flex-direction:flex-end;
 
     padding-left: 50px;
-    padding-top: 50px;
+    padding-top: 20px;
     height: 100px;
     background-color: purple;
     justify-items: flex-end;
@@ -71,19 +88,33 @@ h1{
     height: 50px;
     background-color: aqua;
     cursor: pointer;
+    border-radius: 25px;
+    
 }
 
-.rules{
+#reset:hover{
+    background-color: deepskyblue;
+}
+
+#rules{
     width: 100px;
     height: 50px;
     background-color:pink;
     cursor: pointer;
+    border-radius: 25px;
+    transition: all .3s ease;
+    
+    
 }
 
-#game-rules{
+.rules:hover{
+    background-color: deeppink;
+}
+
+/* #game-rules{
     
         padding: 30px 20px 20px 20px;
-    /*	margin: 20px auto 30px auto;*/
+    	margin: 20px auto 30px auto;
         text-align: left;
         display: none; 
         background: #0F2725;
@@ -92,8 +123,94 @@ h1{
         right: 0;
         width: 100%;
         z-index: 99;
-        font-size: .75em;
+        font-size: .75em;    } */
+
+.modal {
+    background-color:beige;
+    position: absolute;
+    top: 0;
+    /* bottom: 10; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    max-width: 150ch;
+    font-size: medium;
+    padding: 1em;
+    
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    /* opacity: 0; */
+    /* z-index: 99; */
+    transition: all .5s ease-in-out;
+}
+
+.modal_contents{
+    color:brown;
+    padding:1fr;
+    margin: 200px;
+    font-size:xx-large
+    
+
+}
+
+.modal--hidden{
+    display: none;
+}
+
+.close-modal{
+    background-color: khaki;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    width: 75px;
+    height: 50px;
+    font-size: medium;
+
+}
+
+.close-modal:hover{
+    background-color: aquamarine;
+}
+
+.game-board{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    
+}
+
+#command {
+    font-family: 'Vujahday Script', cursive;
+    font-weight: 600;
+    font-size: 2rem;
+    word-spacing: 1rem;
+    animation: blinker 2s step-start infinite;
+}
+@keyframes blinker {
+    25% {
+      opacity: 0;
     }
+}
+
+table, th, td{
+    padding: .5rem;
+    border: solid 2px black;
+    font-size: 1rem;
+    font-family: 'Teko', sans-serif;
+    font-weight: 600;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+table{
+    margin: auto;
+    margin-bottom: 5rem;
+    border: 0;
+}
 
 
 
@@ -108,9 +225,7 @@ h1{
 
 
 
-
-
-.modal { 
+/* .modal { 
 	padding: 40px 0 !important;
 	width: 75% !important; 
 	height: 75% !important;
@@ -123,4 +238,4 @@ h1{
 }
 .modal-body {
 	max-height: 600px;
-}
+} */
