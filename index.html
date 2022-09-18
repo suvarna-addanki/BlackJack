@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,15 @@
     <link rel="stylesheet" href = "blackjack.css">
     <script defer src="blackjack.js"></script>
     <header>
+
         <div class = "game">
 
             <button id = "reset">RESET GAME</button>
             <h5><span id = "command">Let's Play<br>BlackJack</span></h5>
             <button id = "rules" >HOW TO PLAY</button>
             
-        </div>    
+        </div> 
+
     </header>
     
 </head>
@@ -22,41 +25,29 @@
 <body> 
        
     <h2>Dealer: <span id="dealer-Total"></span></h2>
+
     <div id="dealer-cards">
-        <img id="hide" src="./cards/BACK.png"> 
-        <!-- <p id="results-1"></p>        -->
+        
+        <img id="hide" src="./cards/BACK.png">
+
     </div>
+
     <p id="results-1"></p>
 
     <h2>You: <span id="your-Total"></span></h2>
+
     <div id="your-cards"></div>
 
         <br>
+
         <button id="hit">HIT</button>
-        <button id="stay">STAY</button>
+        <button id="stay">STAND</button>
+        
         <p id="results"></p> 
-    </div>
 
-    <div container class = "game-board">
-        <h3>Scoreboard: </h3>
-        <table>
-            <tr>
-                <th>Wins</th>
-                <th>Losses</th>
-                <th>Draws</th>
-            </tr>
-            <tr>
-                <td><span id="wins">0</span></td>
-                <td><span id="losses">0</span></td>
-                <td><span id="draws">0</span></td>
-            </tr>
-        </table>
-    </div>
-    
+    </div>       
       
-</body>
-
-    
+</body>    
 
 <div class ="modal modal--hidden">
     <div class = "modal_contents">
@@ -67,9 +58,6 @@
                 <button class="close-modal">CLOSE</button>
     </div>
 </div>
-
-
-
 
 </html>
 

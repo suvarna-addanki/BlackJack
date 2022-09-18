@@ -47,9 +47,7 @@ function drawCardForDealer() {
     dealerTotal += getValue(card);
     dealerAceCount += checkAce(card);
     document.getElementById("dealer-cards").append(cardImg)
-    document.getElementById("dealer-Total").innerText = getValue(card)    //displaying the value of dealer card
-
-    
+    document.getElementById("dealer-Total").innerText = getValue(card)    //displaying the value of dealer card   
     
     
 }
@@ -58,27 +56,18 @@ function drawCardForPlayer() {
     let cardImg = document.createElement("img");   //creating an img tag for the second card to be displayed if the dealerTotal is lessthan 17(it is nothing but adding image tag in Html but instead of adding in there we are doing thru DOM dynamically)
     let card = deckOfCards.pop();                    //popping that second card out of the deck    
     cardImg.src = "./cards/" + card + ".png";
+    console.log(cardImg.src )
     yourTotal += getValue(card);
     yourAceCount += checkAce(card);
     document.getElementById("your-cards").append(cardImg)
-    document.getElementById("your-Total").innerText = getValue(card)    //displaying the value of dealer card
-
-    
+    document.getElementById("your-Total").innerText = getValue(card)    //displaying the value of dealer card    
 }
+
 function disablebtns() {
     document.getElementById("hit").hidden = true;
     document.getElementById("stay").hidden = true;
 }
 
-// function reduceAceCount(acecountParam) {
-//     acecountParam -= 1
-//     return acecountParam
-// }
-
-// function reduceTotal(totalParam) {
-//     totalParam -= 10
-//     return totalParam
-// }
 
 function startGame() {   //when we start the game first we want to deal the cards to dealer 2 cards one is always hidden
     
@@ -87,24 +76,17 @@ function startGame() {   //when we start the game first we want to deal the card
     dealerTotal += getValue(hiddenCard);   //adding that hiddencard value to dealerTotal(getValue function is defined on line 50)
     dealerAceCount += checkAce(hiddenCard);   //updating dealerAceCount whenever he gets Ace thru checkAce function which is defined on line 65
 
-    drawCardForDealer()
-
-
-    
-
+    drawCardForDealer() 
    
-    //drwaing 2 cards to the player when game starts
+    //drawing 2 cards to the player when game starts
     for(i = 0; i < 2; i++) {                           //player always get 2 cards when the game starts
 
-        drawCardForPlayer();
-       
+        drawCardForPlayer()       
 
     }
 
     let message = "";
         if(yourTotal == 21) {
-            // message = "YAY! BLAKJACK. YOU WIN !"
-            // document.getElementById("results").innerText = message;
             disablebtns();
             document.getElementById("hide").src = "./cards/" + hiddenCard + ".png"; 
             document.getElementById("dealer-Total").innerText = dealerTotal;
@@ -112,9 +94,7 @@ function startGame() {   //when we start the game first we want to deal the card
             {
                 message = "Tie! Both has BlackJack!"
             }
-            document.getElementById("results").innerText = message;
-
-            
+            document.getElementById("results").innerText = message;            
 
         }
         document.getElementById("your-Total").innerText = yourTotal //displaying the sum of player cards when the game loads
@@ -127,7 +107,7 @@ function startGame() {   //when we start the game first we want to deal the card
                     b: yourAceCount
                   
                 }
-                obj = reduceAceForPlayer(obj)
+                obj = reduceAceForPlayer(obj)    //callingreduce ace for player function 
                 yourTotal = obj.a;
                 yourAceCount = obj.b;
                
@@ -140,27 +120,19 @@ function startGame() {   //when we start the game first we want to deal the card
         }
         document.getElementById("results").innerText = message;
 
-        // if(yourTotal > 21) {
-        //     if (yourAceCount > 0)
-        //     {
-                
-        //         reduceTotal(yourTotal)
-                
-        //     }
-        //     reduceAceCount(yourAceCount)
-        //     document.getElementById("your-Total").innerText = yourTotal 
-        // }
-        //eventlisteners for hit and stay and reset buttons
+        
+    //eventlisteners for hit and stay and reset buttons
     document.getElementById("hit").addEventListener("click", hit);
     document.getElementById("stay").addEventListener("click", stay);
     document.getElementById("reset").addEventListener("click", reset);
-    //document.querySelector("#rules").addEventListener("click",)
    
     }
 
     function reset() {
         window.location.reload()
     }
+
+    //to show the rules when clicked on the how to play button(used modal concept)
 
     const toggleModal = () => {
         document.querySelector(".modal").classList.toggle("modal--hidden")        
@@ -171,50 +143,6 @@ function startGame() {   //when we start the game first we want to deal the card
 
     document.querySelector(".close-modal").addEventListener("click",toggleModal)
 
-    // function rules() {
-    //     // const modal = document.getElementById("#modal")
-    //     // const rules = document.querySelector(".rules")
-    //     // rules.classList.add("modal")
-    // var x = document.getElementById("#modal")
-    //     if(x.style.display === "none") {
-    //     x.style.display = "block"
-    // } else {
-    //     x.style.display = "none"
-    // }
-    
-    
-    // }
-
-    // function rules() {
-    //     // var element = document.body
-    //     // element.classList.toggle("modal")
-
-    //     const rules = document.querySelector(".rules")
-    //     rules.classList.toggle("modal")
-    //     if(rules.style.display ===)
-    // }
-
-
-
-    
-        
-        // rules.addEventListener("click", () => {
-        //     modal.showModal()
-        // })
-        
-        // const openrules = document.querySelectorAll("[data-open]")
-        // const isVisible = "is-visible";
-
-        // for(const index of openrules) {
-        //     index.addEventListener("click", function(){
-        //         const modalID = this.dataset.open;
-        //         document.getElementById(modalID).classList.add(isVisible)
-        //     })
-        // }
-        
-        // close.addEventListener("click", () => {
-        //     modal.closeModal()
-        // })
     
 
     function hit() {              //if you (the player) does not hit the hit button we dont do anything
@@ -223,6 +151,7 @@ function startGame() {   //when we start the game first we want to deal the card
         } 
 
         drawCardForPlayer()
+
         if (yourAceCount > 0)
         {
             let obj = {
@@ -236,23 +165,7 @@ function startGame() {   //when we start the game first we want to deal the card
             //window.alert("Your Ace value changed from 11 to 1:  ")
            
         }       
-        // if(yourTotal > 21) {
-        //     if (yourAceCount > 0)
-        //     {
-                
-        //         reduceTotal(yourTotal)
-                
-        //     }
-        //     reduceAceCount(yourAceCount)
-        //     document.getElementById("your-Total").innerText = yourTotal
-        // }
         
-        // if (yourAceCount > 0){
-        //     reduceTotal(yourTotal)
-        //     //reduceAceCount(yourAceCount)
-        //     document.getElementById("your-Total").innerText = yourTotal
-            
-        // }
         if(yourTotal == 21) {    
             disablebtns()
             rundealer();
@@ -286,20 +199,6 @@ function startGame() {   //when we start the game first we want to deal the card
         }  
         document.getElementById("dealer-Total").innerText = dealerTotal;     
 
-        // btnHit = false;    //once player hits stay button we are setting HIT button false(disabling HIT button) meaning won't be able to draw cards anymore
-        // document.getElementById("hide").src = "./cards/" + hiddenCard + ".png";    //revealing the hidden card(dealer side)
-        
-        
-        
-        
-        // if(dealerAceCount > 0) {
-        //     reduceTotal(dealerTotal)
-        //     reduceAceCount(dealerAceCount)
-        // }
-        
-        //btnHit = false;    //once player hits stay button we are setting HIT button false(disabling HIT button) meaning won't be able to draw cards anymore
-        
-        //displaying blackjack message for the dealer
         let message = "";
         if(dealerTotal == 21) {
             message = "OOPS! BLACKJACK.DEALER WON!"
@@ -391,9 +290,10 @@ function startGame() {   //when we start the game first we want to deal the card
         document.getElementById("hide").src = "./cards/" + hiddenCard + ".png"; 
         document.getElementById("dealer-Total").innerText = dealerTotal;    //revealing the hidden card(dealer side)
     while(dealerTotal < 17) {
+
         drawCardForDealer()
         document.getElementById("dealer-Total").innerText = dealerTotal; 
-        //document.getElementById("dealer-cards").append(cardImg)
+        
     }
         let message
         if(dealerTotal == 21)
@@ -409,16 +309,16 @@ function startGame() {   //when we start the game first we want to deal the card
         {
             message = "You Won!"
         }
-            
-        //document.getElementById("dealer-Total").innerText = dealerTotal; 
+        
         document.getElementById("results-1").innerText = message;
+    
     }
 
 
 function reduceAceForPlayer(obj) {     
     let yourTotalParam = obj.a;
     let yourAceCountParam = obj.b;
-    while(obj.a > 21 && obj.b > 0){    //if yourtotal is > 21 and if you have morethan one ace then we can set ace to 1(instaed of 11) by reducing 10 in the line below 
+    while(obj.a > 21 && obj.b > 0){    //if yourtotal is > 21 and if you have morethan one ace then we can set ace to 1(instead of 11) by reducing 10 in the line below 
         
         obj.a -= 10                    //reducing total by 10
                     
@@ -431,7 +331,7 @@ function reduceAceForPlayer(obj) {
 function reduceAceForDealer(obj) {     
     let dealerTotalParam = obj.a;
     let dealerAceCountParam = obj.b;
-    while(obj.a > 21 && obj.b > 0){    //if yourtotal is > 21 and if you have morethan one ace then we can set ace to 1(instaed of 11) by reducing 10 in the line below 
+    while(obj.a > 21 && obj.b > 0){    //if dealer total is > 21 and if you have morethan one ace then we can set ace to 1(instead of 11) by reducing 10 in the line below 
         
         obj.a -= 10                    //reducing total by 10
                     

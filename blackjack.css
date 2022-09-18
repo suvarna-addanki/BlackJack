@@ -30,11 +30,15 @@ h1{
     cursor: pointer;
     border-radius: 25px;
     color:brown;
+    font-family: 'Lobster', cursive;
+    font-weight: 700;
     
     
 }
 #hit:hover{
     background-color: yellowgreen;
+    box-shadow: black 0px 0px 5px 2px;
+
 }
 
 #stay{
@@ -45,11 +49,15 @@ h1{
     cursor: pointer;
     border-radius: 25px;
     color: aquamarine;
+    font-family: 'Lobster', cursive;
+    font-weight: 700;
    
 }
 
 #stay:hover{
     background-color: darkred;
+    box-shadow: yellow 0px 0px 5px 2px;
+
     
 }
 
@@ -77,8 +85,7 @@ h1{
     background-color: purple;
     justify-items: flex-end;
     justify-content: space-around;
-    align-items: center;
-    
+    align-items: center;  
     
     
 }
@@ -89,11 +96,15 @@ h1{
     background-color: aqua;
     cursor: pointer;
     border-radius: 25px;
+    font-family: 'Lobster', cursive;
+    font-weight: 700;
     
 }
 
 #reset:hover{
     background-color: deepskyblue;
+    box-shadow: greenyellow 0px 0px 5px 2px;
+
 }
 
 #rules{
@@ -103,27 +114,16 @@ h1{
     cursor: pointer;
     border-radius: 25px;
     transition: all .3s ease;
-    
+    font-family: 'Lobster', cursive;
+    font-weight: 700;    
     
 }
 
-.rules:hover{
+#rules:hover{
     background-color: deeppink;
-}
+    box-shadow: pink 0px 0px 5px 2px;
 
-/* #game-rules{
-    
-        padding: 30px 20px 20px 20px;
-    	margin: 20px auto 30px auto;
-        text-align: left;
-        display: none; 
-        background: #0F2725;
-        position: absolute;
-        top: 55px;
-        right: 0;
-        width: 100%;
-        z-index: 99;
-        font-size: .75em;    } */
+}
 
 .modal {
     background-color:beige;
@@ -161,12 +161,14 @@ h1{
 
 .close-modal{
     background-color: khaki;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     transition: all .5s ease-in-out;
     width: 75px;
     height: 50px;
     font-size: medium;
+    font-family: 'Lobster', cursive;
+    font-weight: 700;
 
 }
 
@@ -186,8 +188,7 @@ h1{
 #command {
     font-family: 'Vujahday Script', cursive;
     font-weight: 600;
-    font-size: 2rem;
-    word-spacing: 1rem;
+    font-size: 2rem;   
     animation: blinker 2s step-start infinite;
 }
 @keyframes blinker {
@@ -196,21 +197,6 @@ h1{
     }
 }
 
-table, th, td{
-    padding: .5rem;
-    border: solid 2px black;
-    font-size: 1rem;
-    font-family: 'Teko', sans-serif;
-    font-weight: 600;
-    padding-left: 3rem;
-    padding-right: 3rem;
-}
-
-table{
-    margin: auto;
-    margin-bottom: 5rem;
-    border: 0;
-}
 
 
 
@@ -225,17 +211,6 @@ table{
 
 
 
-/* .modal { 
-	padding: 40px 0 !important;
-	width: 75% !important; 
-	height: 75% !important;
-	opacity: .90 !important;
-	overflow: hidden !important;
-	max-height: 100% !important;
-} 
-.modal-content h4, .modal-content p {
-	color: black;
-}
-.modal-body {
-	max-height: 600px;
-} */
+
+
+
