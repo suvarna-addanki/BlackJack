@@ -47,3 +47,14 @@ HTML,CSS,JAVASCRIPT
 
 14. Implemented CSS to give styling and keyframes animation to display the title 
 
+♦️ Future Implementations
+
+1. Add betting
+
+2. Add Split feature
+
+♦️ Technical Challenges
+
+1. Ace logic
+
+
