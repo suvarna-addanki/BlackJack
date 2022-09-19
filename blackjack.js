@@ -55,18 +55,20 @@ function drawCardForDealer() {
 function drawCardForPlayer() {
     let cardImg = document.createElement("img");   //creating an img tag for the second card to be displayed if the dealerTotal is lessthan 17(it is nothing but adding image tag in Html but instead of adding in there we are doing thru DOM dynamically)
     let card = deckOfCards.pop();                    //popping that second card out of the deck    
-    cardImg.src = "./cards/" + card + ".png";
-    console.log(cardImg.src )
+    cardImg.src = "./cards/" + card + ".png";    
     yourTotal += getValue(card);
     yourAceCount += checkAce(card);
     document.getElementById("your-cards").append(cardImg)
-    document.getElementById("your-Total").innerText = getValue(card)    //displaying the value of dealer card    
+    document.getElementById("your-Total").innerText = getValue(card)    //displaying the value of dealer card 
+     
 }
 
 function disablebtns() {
     document.getElementById("hit").hidden = true;
     document.getElementById("stay").hidden = true;
 }
+
+
 
 
 function startGame() {   //when we start the game first we want to deal the cards to dealer 2 cards one is always hidden
@@ -93,6 +95,7 @@ function startGame() {   //when we start the game first we want to deal the card
             if(dealerTotal == 21)
             {
                 message = "Tie! Both has BlackJack!"
+                
             }
             document.getElementById("results").innerText = message;            
 
@@ -117,6 +120,7 @@ function startGame() {   //when we start the game first we want to deal the card
         if(yourTotal == 21 && dealerTotal < 21)
         {
             message = "You won with a BlackJack!"
+            
         }
         document.getElementById("results").innerText = message;
 
@@ -146,6 +150,7 @@ function startGame() {   //when we start the game first we want to deal the card
     
 
     function hit() {              //if you (the player) does not hit the hit button we dont do anything
+
         if(!btnHit) {
             return;
         } 
@@ -172,12 +177,10 @@ function startGame() {   //when we start the game first we want to deal the card
         } 
         if(yourTotal > 21) { 
             disablebtns()
-            let message = "You Bust !!!";   
+            let message = "You Busted !!!";              
             document.getElementById("results").innerText = message     
         }
-
-        console.log(yourTotal)              //consoling to check
-     
+            
         document.getElementById("your-Total").innerText = yourTotal       //displaying your total on 
 
     }
