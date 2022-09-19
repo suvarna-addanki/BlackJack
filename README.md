@@ -40,5 +40,5 @@ HTML,CSS,JAVASCRIPT
 
 7.Added ability to toggle in/out rules section using modal.
 
-8.Implemented CSS to give styling and keyframes animation to display the title 
+8.Implemented CSS to give styling and keyframes animation to display the title
 
