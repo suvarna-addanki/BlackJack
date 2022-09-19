@@ -35,7 +35,6 @@ HTML,CSS,JAVASCRIPT
 
 8. Dealer's actions are based on standard blackjack rules (hit if under 17, stand if 17 or above).
 
-<<<<<<< HEAD
 9. Created win logic and detection for aces.
 
 10. Aces can hold values of either 11 or 1.
@@ -47,7 +46,4 @@ HTML,CSS,JAVASCRIPT
 13. Added ability to toggle in/out rules section using modal.
 
 14. Implemented CSS to give styling and keyframes animation to display the title 
-=======
-8.Implemented CSS to give styling and keyframes animation to display the title
->>>>>>> b02adc5437164bc5463f65d0881b7a0491144c53
 
