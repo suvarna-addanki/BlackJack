@@ -20,7 +20,7 @@ HTML,CSS,JAVASCRIPT
 
 ♦️ Process
 
-1. Created cards.js file to store full deck of cards including images, value, and name.
+1. Created cards folder to store full deck of cards including images, value, and name.
 
 2. Generated start game functionality to get the cards on the board.
 
